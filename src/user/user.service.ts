@@ -14,24 +14,4 @@ export class UserService {
 
     return await data.save();
   }
-
-  findAll() {
-    return `This action returns all user`;
-  }
-
-  async findOne(_id: string): Promise<User> {
-    const data = await this.UserModel.findById(_id).exec();
-
-    return data;
-  }
-
-  async update(_id: string, updateUserDto: UpdateUserDto): Promise<any> {
-    return await this.UserModel.findByIdAndUpdate(_id, updateUserDto, {
-      new: true,
-    });
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }
 }
